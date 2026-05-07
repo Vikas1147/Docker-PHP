@@ -9,10 +9,9 @@ pipeline {
             }
         }
 
-        stage('Stop Old Container') {
+        stage('Remove Old Container') {
             steps {
-                bat 'docker stop php-container || exit 0'
-                bat 'docker rm php-container || exit 0'
+                bat 'docker rm -f php-container || exit 0'
             }
         }
 
