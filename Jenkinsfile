@@ -3,12 +3,6 @@ pipeline {
 
     stages {
 
-        stage('Clone Repository') {
-            steps {
-                git 'https://github.com/Vikas1147/Docker-PHP.git'
-            }
-        }
-
         stage('Build Docker Image') {
             steps {
                 bat 'docker build -t php-docker-app .'
